@@ -18,6 +18,7 @@ code:
     prismjs:
       style: "default"
       preprocess: true
+key: p2021-02-26-GMM
 ---
 
 This is my review of Gaussian mixture model and EM algorithm in Bishop's book *Pattern Recognition and Machine Learning*[^1], including my organization of materials covered by the book along with code implementation and visualization. Formulas will not be deduced in detail since these work will be collected in *PRML Formula* series.
