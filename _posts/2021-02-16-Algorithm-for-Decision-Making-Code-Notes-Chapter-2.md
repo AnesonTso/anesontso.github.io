@@ -71,7 +71,7 @@ Assignment(:x => 1, :y => 0)
 
 Similar to `FactorTable` which is a dictionary of Assignment-float number pairs, we can express it in a compact way as well,
 ```julia
-FactorTable(Assignment(:x => 0, :y => 0) => 0.4, 
+FactorTable(Assignment(:x => 0, :y => 0) => 0.4,
 			Assignment(:x => 0, :y => 1) => 0.1,
 			Assignment(:x => 1, :y => 0) => 0.2,
 			Assignment(:x => 1, :y => 1) => 0.3)
@@ -105,7 +105,7 @@ end
 
 `assignments` is defined in nested way and I will explain it layer by layer.
 
-1. `Iterators.product(1:v.m for v in vars)...)`: number of states of each variable is retrived and used to construct iterators incrementing from `1` to `m`. `...` is used to take every iterators as each argument for function `Iterators.product`. `Iterators.product` construct Cartesian product from the combination of its argument, for example, 
+1. `Iterators.product(1:v.m for v in vars)...)`: number of states of each variable is retrived and used to construct iterators incrementing from `1` to `m`. `...` is used to take every iterators as each argument for function `Iterators.product`. `Iterators.product` construct Cartesian product from the combination of its argument, for example,
 
 ```julia
 for p in Iterators.product(1:2, 1:3)
@@ -140,7 +140,7 @@ Now it's ready to construct a factor, which combines two objects: `Variable` and
 
 ```julia
 φ = Factor([X, Y], FactorTable(
-			Assignment(:x => 0, :y => 0) => 0.4, 
+			Assignment(:x => 0, :y => 0) => 0.4,
 			Assignment(:x => 0, :y => 1) => 0.1,
 			Assignment(:x => 1, :y => 0) => 0.2,
 			Assignment(:x => 1, :y => 1) => 0.3))
@@ -150,7 +150,7 @@ It can be tedious to write the pair operator `=>`, it would be nice to express i
 
 ```julia
 φ = Factor([X, Y], FactorTable(
-			(x = 0, y = 0) => 0.4, 
+			(x = 0, y = 0) => 0.4,
 			(x = 0, y = 1) => 0.1,
 			(x = 1, y = 0) => 0.2,
 			(x = 1, y = 1) => 0.3))
@@ -159,7 +159,7 @@ It can be tedious to write the pair operator `=>`, it would be nice to express i
 Notice the change here, the `Assignment`, or `Dict{Symbol, Int}` is replaced by a `NamedTuple`, that is, the `Assignment` was constructed from `Symbol`-`Integer` pairs now is constructed from a `NamedTuple`. Therefore, we need to **overload** the constructor of `Assignment`.
 
 ```julia
-Assignment(a::NamedTuple) = 
+Assignment(a::NamedTuple) =
 	Assignment(n => v for (n, v) in zip(keys(a), values(a)))
 Base.convert(::Type{Assignment}, nt::NamedTuple) = Assignment(nt)
 Base.isequal(a::Assignment, nt::NamedTuple) = length(a) == length(nt)
@@ -197,20 +197,20 @@ Therefore, joint probability can be expressed as product of factors and all nece
 A Bayesian network only contains factors as conditional probabilities, the joint probability of a specific assignment can be calculated from the product of factors.
 
 ```julia
-function probability(bn::BayesianNetwork, assignment::Assignment) 
-	subassignment(φ) = select(assignment, variablenames(φ)) 
+function probability(bn::BayesianNetwork, assignment::Assignment)
+	subassignment(φ) = select(assignment, variablenames(φ))
 	probability(φ) = get(φ.table, subassignment(φ), 0.0)
 	return prod(probability(φ) for φ in bn.factors)
-end 
+end
 ```
 
-`probability` is constructed from two facility functions: 
+`probability` is constructed from two facility functions:
 1. `subassignment` uses `select` to return a subassignment whose variables are consistent with the factor given,
 2. `probability` uses `get` function to retrive probability of target assignement from a factor table (`φ.table`), for example,
 
 ```julia
 ft = FactorTable(
-	(x = 0, y = 0) => 0.4, 
+	(x = 0, y = 0) => 0.4,
 	(x = 0, y = 1) => 0.1,
 	(x = 1, y = 0) => 0.2,
 	(x = 1, y = 1) => 0.3))
