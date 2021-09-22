@@ -6,8 +6,14 @@ tags:
 - Probability
 - PRML
 comment: true
+excerpt_separator: <!--more-->
 
 ---
+
+This blog collects detailed deduction of formulas in Bishop's *Pattern Recognition and
+Machine Learning*, Chapter 9.
+
+<!--more-->
 
 ## Section 9.3.3
 

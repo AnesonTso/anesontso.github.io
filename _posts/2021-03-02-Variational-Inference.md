@@ -3,9 +3,13 @@ title: Variational Inference
 mathjax: true
 date: 2021-03-02
 tag: Probability
+excerpt_separator: <!--more-->
+
 ---
 
 This post is mainly based on Bishop's *Pattern Recognition and Machine Learning*.
+
+<!--more-->
 
 ## Bayesian Overview
 
