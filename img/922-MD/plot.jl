@@ -85,3 +85,30 @@ let p = plot(legend=false, ratio=1, framestyle=:origin)
         # (2.5, 1.4, L"\mathbf{\alpha}", c3)
     )
 end
+
+
+let p1 = plot(legend=false, ratio=1, framestyle=:origin)
+    default(lw=4, arrow=true)
+
+    c1 = palette(:Paired_10)[2]
+    c2 = palette(:Paired_10)[8]
+
+    plot!([0, -1], [0, 2], color=c1)
+    plot!([0, 3], [0, 5], alpha=0.5, style=:dot, color=c2)
+
+    p2 = plot(legend=false, ratio=1, framestyle=:origin, title="Rotation")
+    default(lw=4, arrow=true)
+
+    plot!([0, -1], [0, 2], color=c1)
+    plot!([0, 3], [0, 5], alpha=0.5, style=:dot, color=c2)
+    plot!([0, 1.15], [0, 1.92], style=:dot, color=c1)
+
+    p3 = plot(legend=false, ratio=1, framestyle=:origin, title="Scaling")
+    default(lw=4, arrow=true)
+
+    plot!([0, -1], [0, 2], color=c1)
+    plot!([0, 3], [0, 5], alpha=0.5, style=:dot, color=c2)
+    plot!([0, 3], [0, 5], style=:dot, color=c1)
+
+    plot(p1, p2, p3, layout=(1,3), size=(700, 300))
+end

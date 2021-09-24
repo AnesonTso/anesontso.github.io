@@ -117,7 +117,7 @@ That is to say, for any vector in this 2-dimensional space, $\begin{pmatrix} x \
 
 $$\mathbf{A}\begin{pmatrix} x \\ y\end{pmatrix} = x\begin{pmatrix} 1 \\ 2\end{pmatrix}+y\begin{pmatrix} 2 \\ 1\end{pmatrix}= \begin{pmatrix} x+2y \\ 2x+y\end{pmatrix} = \boldsymbol{\alpha}$$
  
-by choosing suitable $x$ and $y$, we can represent any vector $\boldsymbol{\alpha}$ in this 2-dimensional space. In this case, we say that **$\boldsymbol{\alpha}_1$ and $\boldsymbol{\alpha}_2$ expand this 2-dimensional plane (space)**.
+by choosing suitable $x$ and $y$, we can represent any vector $\boldsymbol{\alpha}$ in this 2-dimensional space. In this case, we say that **$\boldsymbol{\alpha}_1$ and $\boldsymbol{\alpha}_2$ expand this 2-dimensional plane (space)**, which is equivalent to say that $\boldsymbol{\alpha}_1$ and $\boldsymbol{\alpha}_2$ are **basis** of this plane (space).
 
 Notice that any vector can always be expressed as an identity matrix multiplied by itself. For example,
 
@@ -258,3 +258,33 @@ $$\text{nonsingularity} \Leftrightarrow \text{full rank} \Leftrightarrow \text{i
 and also,
 
 $$\text{singularity} \Leftrightarrow \text{not full rank} \Leftrightarrow \text{non-invertible}$$
+
+## Matrix As Linear Transformation
+
+In the previous section, we see $$\mathbf{A}\boldsymbol{\alpha}=\mathbf{b}$$ as a transformation imposed by $\mathbf{A}$ upon $\boldsymbol{\alpha}$ to $\mathbf{b}$. In linear algebra, a transformation is composed of two parts: **scaling** and **rotation**.
+
+For example, $$\begin{pmatrix}1 & 2 \\ 3 & 4\end{pmatrix}\begin{pmatrix}-1 \\ 2\end{pmatrix} = \begin{pmatrix}3 \\ 5\end{pmatrix}$$
+
+If we first rotate $$\begin{pmatrix} -1 \\ 2\end{pmatrix}$$ clockwise $57.5^\circ$ then scale it $2.61$ times its length, we will get exactly $\mathbf{b}$ as illustrated below.
+
+<div align="center">
+    <img class="image image--xl" src="/img/922-MD/plot5.svg">
+</div>
+
+A rotation matrix has the form $$\mathbf{R}=\begin{pmatrix}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta  \end{pmatrix}$$ where $\theta$ is the angular between two vectors (check for section [Orthogonality](#orthogonality)). 
+
+Therefore, $\mathbf{A} \boldsymbol{\alpha}$ can be seen as two consecutive multiplications by matrices each performing rotation and scaling, $\mathbf{A} = \mathbf{S}\mathbf{R}$, where,
+
+$$\mathbf{R} = \begin{pmatrix}0.54 & 0.84 \\ -0.84 & 0.54\end{pmatrix}$$
+
+and,
+
+$$\mathbf{S} = \begin{pmatrix} 2.61 & 0 \\ 0 & 2.61\end{pmatrix}$$
+
+thus, 
+
+$$\mathbf{A}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha} =\mathbf{b} \tag{7}$$
+
+Notice that even $$\mathbf{A}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha}$$, it does not necessarily mean that $\mathbf{A} = \mathbf{S}\mathbf{R}$. $(7)$ only tells us either by transformation $\mathbf{A}$ or by a combined transformations $\mathbf{R}$ and $\mathbf{S}$ we end up with the same resulted vector, but the possible paths from one vector to another can be different.
+
+This example provides intuition about decomposing matrix into multiplication of consecutive matrices each responsible for a specific operation on the vector. We've already talked about basis in which we can represent a vector, in fact matrix decomposition makes extensive use of the basis, which will be explained later.
