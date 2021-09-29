@@ -21,8 +21,9 @@ excerpt_separator: <!--more-->
 
 ---
 
-**Zhuo Jianchao**
+In this blog, we'll mention some elementary properties of matrix, which will be useful in our subsequent series.
 
+<!--more-->
 
 ## Matrix Multiplied By A Vector
 
@@ -115,7 +116,7 @@ Since matrix multiplication is actually linear combination of its corresponding 
 
 That is to say, for any vector in this 2-dimensional space, $\begin{pmatrix} x \\ y\end{pmatrix}$ will be transformed by $\mathbf{A}$ into,
 
-$$\mathbf{A}\begin{pmatrix} x \\ y\end{pmatrix} = x\begin{pmatrix} 1 \\ 2\end{pmatrix}+y\begin{pmatrix} 2 \\ 1\end{pmatrix}= \begin{pmatrix} x+2y \\ 2x+y\end{pmatrix} = \boldsymbol{\alpha}$$
+$$\mathbf{A}\begin{pmatrix} x \\ y\end{pmatrix} = x\begin{pmatrix} 1 \\ 2\end{pmatrix}+y\begin{pmatrix} 2 \\ 1\end{pmatrix}= \begin{pmatrix} x+2y \\ 2x+y\end{pmatrix} = \boldsymbol{\alpha} \tag{3}$$
  
 by choosing suitable $x$ and $y$, we can represent any vector $\boldsymbol{\alpha}$ in this 2-dimensional space. In this case, we say that **$\boldsymbol{\alpha}_1$ and $\boldsymbol{\alpha}_2$ expand this 2-dimensional plane (space)**, which is equivalent to say that $\boldsymbol{\alpha}_1$ and $\boldsymbol{\alpha}_2$ are **basis** of this plane (space).
 
@@ -163,7 +164,7 @@ We can intuitively understand it by recalling that the radian between these two 
 
 $$\cos \theta = \frac{\mathbf{c}_1 \cdot \mathbf{c}_2}{\Vert \mathbf{c}_1 \Vert \Vert \mathbf{c}_2 \Vert}$$
 
-If $\mathbf{c}_1 \cdot \mathbf{c}_2=0$, $\cos \theta=0$, which means that $\theta$ are always multiple of $\pi/2$ hence $\mathbf{c}_1$ and $\mathbf{c}_2$ yields multiple of $90^{\circ}$ of angle therefore perpendicular to each other.
+If $\mathbf{c}_1 \cdot \mathbf{c}_2=0$, $\cos \theta=0$, which means that $\theta$ are always $\pi/2$ plus multiple of $\pi$ hence $\mathbf{c}_1$ and $\mathbf{c}_2$ yields $90^{\circ}$ of angle therefore perpendicular to each other.
 
 
 ## Inverse of A Matrix
@@ -178,7 +179,7 @@ The inverse of a matrix $\mathbf{A}$, denoted as $\mathbf{A}^{-1}$ is defined as
 
 To solve,
 
-$$\begin{pmatrix} 4\\3\end{pmatrix} = \begin{pmatrix} 1 & 2\\ 2 & 1\end{pmatrix}\begin{pmatrix} c_1\\c_2\end{pmatrix} \tag{3}$$
+$$\begin{pmatrix} 4\\3\end{pmatrix} = \begin{pmatrix} 1 & 2\\ 2 & 1\end{pmatrix}\begin{pmatrix} c_1\\c_2\end{pmatrix} \tag{4}$$
 
 we can multiply inverse of $\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$ to both sides of $(3)$
 
@@ -186,7 +187,7 @@ $$\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}^{-1}\begin{pmatrix} 4\\3\end{pmat
 
 by the definition of matrix inverse, it simplies to,
 
-$$\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}^{-1}\begin{pmatrix} 4\\3\end{pmatrix} = \begin{pmatrix} c_1\\c_2\end{pmatrix} \tag{4}$$
+$$\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}^{-1}\begin{pmatrix} 4\\3\end{pmatrix} = \begin{pmatrix} c_1\\c_2\end{pmatrix} \tag{5}$$
 
 now, it becomes clear that the coefficient vector $\begin{pmatrix}c_1 \\ c_2\end{pmatrix}$ we want to solve are actually equivalent to the multiplication of the vector and the inverse of matrix whose column vectors are basis in which we want to express the vector.
 
@@ -213,7 +214,7 @@ For example, suppose we have a basis of two vectors $\mathbf{d}_1=\begin{pmatrix
 
 $$\begin{pmatrix}
 3\\4
-\end{pmatrix} = c_1 \mathbf{d}_1 + c_2 \mathbf{d}_2 = c_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + c_2\begin{pmatrix} 2 \\ 4 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 &4 \end{pmatrix}\begin{pmatrix} c_1 \\ c_2 \end{pmatrix} \tag{5}$$
+\end{pmatrix} = c_1 \mathbf{d}_1 + c_2 \mathbf{d}_2 = c_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + c_2\begin{pmatrix} 2 \\ 4 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 &4 \end{pmatrix}\begin{pmatrix} c_1 \\ c_2 \end{pmatrix} \tag{6}$$
 
 we can express $(5)$ in system of equations,
 
@@ -235,7 +236,7 @@ Let's go back to $(5)$ to find out why $\mathbf{d}_1$ and $\mathbf{d}_2$ cannot 
 
 $$\begin{pmatrix}
 3\\4
-\end{pmatrix} = c_1 \mathbf{d}_1 + c_2 \mathbf{d}_2 = c_1 \mathbf{d}_1 + 2c_2\mathbf{d}_1 = c \mathbf{d}_1 = c\begin{pmatrix} 1 \\ 2\end{pmatrix} \tag{6}$$
+\end{pmatrix} = c_1 \mathbf{d}_1 + c_2 \mathbf{d}_2 = c_1 \mathbf{d}_1 + 2c_2\mathbf{d}_1 = c \mathbf{d}_1 = c\begin{pmatrix} 1 \\ 2\end{pmatrix} \tag{7}$$
 
 where $c=c_1+ 2c_2$. No matter what $c$ we choose, $(6)$ can never hold equal.
 
@@ -263,7 +264,7 @@ $$\text{singularity} \Leftrightarrow \text{not full rank} \Leftrightarrow \text{
 
 In the previous section, we see $$\mathbf{A}\boldsymbol{\alpha}=\mathbf{b}$$ as a transformation imposed by $\mathbf{A}$ upon $\boldsymbol{\alpha}$ to $\mathbf{b}$. In linear algebra, a transformation is composed of two parts: **scaling** and **rotation**.
 
-For example, $$\begin{pmatrix}1 & 2 \\ 3 & 4\end{pmatrix}\begin{pmatrix}-1 \\ 2\end{pmatrix} = \begin{pmatrix}3 \\ 5\end{pmatrix}$$
+For example, $$\begin{pmatrix}1.41 & 2.19 \\ -2.19 & 1.41\end{pmatrix}\begin{pmatrix}-1 \\ 2\end{pmatrix} = \begin{pmatrix}3 \\ 5\end{pmatrix}$$
 
 If we first rotate $$\begin{pmatrix} -1 \\ 2\end{pmatrix}$$ clockwise $57.5^\circ$ then scale it $2.61$ times its length, we will get exactly $\mathbf{b}$ as illustrated below.
 
@@ -283,8 +284,12 @@ $$\mathbf{S} = \begin{pmatrix} 2.61 & 0 \\ 0 & 2.61\end{pmatrix}$$
 
 thus, 
 
-$$\mathbf{A}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha} =\mathbf{b} \tag{7}$$
+$$\mathbf{A}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha} =\mathbf{b} \tag{8}$$
 
-Notice that even $$\mathbf{A}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha}$$, it does not necessarily mean that $\mathbf{A} = \mathbf{S}\mathbf{R}$. $(7)$ only tells us either by transformation $\mathbf{A}$ or by a combined transformations $\mathbf{R}$ and $\mathbf{S}$ we end up with the same resulted vector, but the possible paths from one vector to another can be different.
+And it can be easily checked that $$\mathbf{A}=\mathbf{S}\mathbf{R}$$.
+
+If we transform $\mathbf{b}$ by a matrix $$\mathbf{B} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$$, we end up with the same resulted vector $\mathbf{b}$, however, even $$\mathbf{B}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha}$$, it does not necessarily mean that $\mathbf{B} = \mathbf{S}\mathbf{R}$. It only tells us either by transformation $\mathbf{B}$ or by a combined transformations $\mathbf{R}$ and $\mathbf{S}$ we end up with the same resulted vector, but the possible paths from one vector to another can be different. 
+
+Also, by $(3)$ we know that multiplication with a matrix is not only a transformation upon **single vector** but the **space as a whole**. Either multiplied by $\mathbf{B}$ or $\mathbf{S}\mathbf{R}$, $\boldsymbol{\alpha}$ **happens to be transformed** to the same result, however, for another vectors in the space, the result can be different.
 
 This example provides intuition about decomposing matrix into multiplication of consecutive matrices each responsible for a specific operation on the vector. We've already talked about basis in which we can represent a vector, in fact matrix decomposition makes extensive use of the basis, which will be explained later.
