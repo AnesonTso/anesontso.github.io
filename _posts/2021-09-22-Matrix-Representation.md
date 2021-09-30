@@ -264,9 +264,9 @@ $$\text{singularity} \Leftrightarrow \text{not full rank} \Leftrightarrow \text{
 
 In the previous section, we see $$\mathbf{A}\boldsymbol{\alpha}=\mathbf{b}$$ as a transformation imposed by $\mathbf{A}$ upon $\boldsymbol{\alpha}$ to $\mathbf{b}$. In linear algebra, a transformation is composed of two parts: **scaling** and **rotation**.
 
-For example, $$\begin{pmatrix}1.41 & 2.19 \\ -2.19 & 1.41\end{pmatrix}\begin{pmatrix}-1 \\ 2\end{pmatrix} = \begin{pmatrix}3 \\ 5\end{pmatrix}$$
+For example, $$\begin{pmatrix}1.41 & 2.19 \\ -2.19 & 1.41\end{pmatrix}\begin{pmatrix}-1 \\ 2\end{pmatrix} = \begin{pmatrix}3 \\ 5\end{pmatrix} \tag{8}$$
 
-If we first rotate $$\begin{pmatrix} -1 \\ 2\end{pmatrix}$$ clockwise $57.5^\circ$ then scale it $2.61$ times its length, we will get exactly $\mathbf{b}$ as illustrated below.
+If we first rotate $\boldsymbol{\alpha}$ clockwise $57.5^\circ$ then scale it $2.61$ times its length, we will get exactly $\mathbf{b}$ as illustrated below.
 
 <div align="center">
     <img class="image image--xl" src="/img/922-MD/plot5.svg">
@@ -284,12 +284,29 @@ $$\mathbf{S} = \begin{pmatrix} 2.61 & 0 \\ 0 & 2.61\end{pmatrix}$$
 
 thus, 
 
-$$\mathbf{A}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha} =\mathbf{b} \tag{8}$$
+$$\mathbf{A}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha} =\mathbf{b} $$
 
 And it can be easily checked that $$\mathbf{A}=\mathbf{S}\mathbf{R}$$.
 
 If we transform $\mathbf{b}$ by a matrix $$\mathbf{B} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$$, we end up with the same resulted vector $\mathbf{b}$, however, even $$\mathbf{B}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha}$$, it does not necessarily mean that $\mathbf{B} = \mathbf{S}\mathbf{R}$. It only tells us either by transformation $\mathbf{B}$ or by a combined transformations $\mathbf{R}$ and $\mathbf{S}$ we end up with the same resulted vector, but the possible paths from one vector to another can be different. 
 
-Also, by $(3)$ we know that multiplication with a matrix is not only a transformation upon **single vector** but the **space as a whole**. Either multiplied by $\mathbf{B}$ or $\mathbf{S}\mathbf{R}$, $\boldsymbol{\alpha}$ **happens to be transformed** to the same result, however, for another vectors in the space, the result can be different.
+Also, by $(3)$ we know that multiplication with a matrix is not only a transformation upon **single vector** but the **space as a whole**. Below is the illustration of the space transformation imposed by matrix $\mathbf{A}=\mathbf{S}\mathbf{R}$, where the <span style=color:blue>blue</span> arrow and <span style=color:red>red</span> arrow represent <span style=color:blue>$x$</span>- and <span style=color:red>$y$</span>- axis in the original space.
+
+<div align="center">
+    <img class="image image--xl" src="/img/922-MD/plot6.gif">
+</div>
+
+Notice that the space grid is, as we expected, rotated and scaled simultaneously. By this process, the vector $\boldsymbol{\alpha}$ is transformed into $\mathbf{b}$ (as indicated by the <span style=color:green>green</span> line).
+
+How about the transformation imposed on the space by matrix $\mathbf{B}$? Below is the illustration.
+
+<div align="center">
+    <img class="image image--xl" src="/img/922-MD/plot7.gif">
+</div>
+
+
+Different from rotation and scaling, $\mathbf{B}$ **flipps** the whole space, transforming the vector $\boldsymbol{\alpha}$  into $\mathbf{b}$.
+
+Either multiplied by $\mathbf{B}$ or $\mathbf{S}\mathbf{R}$, $\boldsymbol{\alpha}$ **happens to be transformed** to the same result, however, for another vectors in the space, the result is quite different.
 
 This example provides intuition about decomposing matrix into multiplication of consecutive matrices each responsible for a specific operation on the vector. We've already talked about basis in which we can represent a vector, in fact matrix decomposition makes extensive use of the basis, which will be explained later.
