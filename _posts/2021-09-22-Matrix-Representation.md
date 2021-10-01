@@ -181,7 +181,7 @@ To solve,
 
 $$\begin{pmatrix} 4\\3\end{pmatrix} = \begin{pmatrix} 1 & 2\\ 2 & 1\end{pmatrix}\begin{pmatrix} c_1\\c_2\end{pmatrix} \tag{4}$$
 
-we can multiply inverse of $\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$ to both sides of $(3)$
+we can multiply inverse of $\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$ to both sides of $(4)$
 
 $$\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}^{-1}\begin{pmatrix} 4\\3\end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}^{-1}\begin{pmatrix} 1 & 2\\ 2 & 1\end{pmatrix}\begin{pmatrix} c_1\\c_2\end{pmatrix} $$
 
@@ -191,7 +191,7 @@ $$\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}^{-1}\begin{pmatrix} 4\\3\end{pmat
 
 now, it becomes clear that the coefficient vector $\begin{pmatrix}c_1 \\ c_2\end{pmatrix}$ we want to solve are actually equivalent to the multiplication of the vector and the inverse of matrix whose column vectors are basis in which we want to express the vector.
 
-Solve $(4)$ yields,
+Solve $(5)$ yields,
 
 $$\begin{pmatrix}c_1 \\ c_2\end{pmatrix} = \begin{pmatrix} 0.67\\1.67\end{pmatrix}$$
 
@@ -206,65 +206,11 @@ Inverse of matrix acts like a function that once multiplied by a vector yields t
 Therefore, inverse of matrix is like a bridge between representations of the same vector in different basis. And a matrix that has its inverse is called an **invertible matrix**.
 
 
-## Singular Matrix
-
-In the above section, we use the inverse of $\mathbf{A}$ without clarifying that it does exist. It's true that not all square matrix (matrix with number of rows equal to number of columns) is invertible. 
-
-For example, suppose we have a basis of two vectors $\mathbf{d}_1=\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ and $\mathbf{d}_2=\begin{pmatrix} 2 \\ 4 \end{pmatrix}$, how can we express $\boldsymbol{\alpha}=\begin{pmatrix} 3 \\ 4 \end{pmatrix}$ in this basis?
-
-$$\begin{pmatrix}
-3\\4
-\end{pmatrix} = c_1 \mathbf{d}_1 + c_2 \mathbf{d}_2 = c_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + c_2\begin{pmatrix} 2 \\ 4 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 &4 \end{pmatrix}\begin{pmatrix} c_1 \\ c_2 \end{pmatrix} \tag{6}$$
-
-we can express $(5)$ in system of equations,
-
-$$\begin{cases}
-3 = c_1 + 2c_2 \\
-4 = 2c_1 + 4 c_2
-\end{cases}$$
-
-if we add $-2$ times first row to the second row, it will yield,
-
-$$\begin{cases}
-3 = c_1 + 2c_2 \\
--2 = 0 + 0
-\end{cases}$$
-
-which has no solution because the second expression never holds true. Since we can not find such $c_1$ and $c_2$ that satisfy $(5)$ it means that $\boldsymbol{\alpha}$ can not be expresssed in the basis of $\mathbf{d}_1$ and $\mathbf{d}_2$. Equivalently, $$\begin{pmatrix}\mathbf{d}_1 & \mathbf{d}_2\end{pmatrix} = \begin{pmatrix}1 & 2 \\ 2 & 4\end{pmatrix}$$ has no inverse.
-
-Let's go back to $(5)$ to find out why $\mathbf{d}_1$ and $\mathbf{d}_2$ cannot be a basis for $\boldsymbol{\alpha}$. Notice that $\mathbf{d}_2 = 2\mathbf{d}_1$, therefore, $(5)$ can be written as,
-
-$$\begin{pmatrix}
-3\\4
-\end{pmatrix} = c_1 \mathbf{d}_1 + c_2 \mathbf{d}_2 = c_1 \mathbf{d}_1 + 2c_2\mathbf{d}_1 = c \mathbf{d}_1 = c\begin{pmatrix} 1 \\ 2\end{pmatrix} \tag{7}$$
-
-where $c=c_1+ 2c_2$. No matter what $c$ we choose, $(6)$ can never hold equal.
-
-In the illustration below, $\mathbf{b}_1,\mathbf{b}_2$ lie exactly along the same line which keeps an angle away from $\boldsymbol{\alpha}$. Every combination of $\mathbf{b}_1$ and $\mathbf{b_2}$ will only lie along the same line which is apparently not $\boldsymbol{\alpha}$. In this case, $\boldsymbol{\alpha}$ cannot be expressed as linear combination of $\mathbf{b}_1$ and $\mathbf{b_2}$ hence $c_1$ and $c_2$ does not exist.
-
-<div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot3.svg">
-</div>
-
-$\mathbf{b}_1$ and $\mathbf{b_2}$ are vectors on the plane, but the combination of them are just a line on the plane. Notice how it is different to $\mathbf{b}_1$ and $\mathbf{b}_2$ whose linear combination can be any vectors on the plane as introduced before.
-
-The matrix $$\begin{pmatrix}\mathbf{d}_1 & \mathbf{d}_2\end{pmatrix} = \begin{pmatrix}1 & 2 \\ 2 & 4\end{pmatrix}$$ multiplied by any vector only result vectors along a same line, lossing its ability to transform vectors in the plane back and forth, therefore, it is no longer invertible. In this case, this matrix is called a **singular matrix**.
-
-The crux behind the singularity is that $\mathbf{b}_2$ itself is linear in $\mathbf{b}_1$. Denote $$\mathbf{D}=\begin{pmatrix}\mathbf{d}_1 & \mathbf{d}_2\end{pmatrix} = \begin{pmatrix}1 & 2 \\ 2 & 4\end{pmatrix}$$, if we multiplied $-2$ times first row of the matrix added to the second row, it yields $$\begin{pmatrix}1 & 2 \\ 0 & 0\end{pmatrix} $$. Notice this matrix has only one row that is not all zero which means that this matrix is of rank $1$, denoted as $\text{rank}(\mathbf{D})=1$ which is less than its dimension of $2$. Therefore, we say that this matrix is NOT of **full rank** hence it's singular.
-
-To sum up, we have the following equivalence
-
-$$\text{nonsingularity} \Leftrightarrow \text{full rank} \Leftrightarrow \text{invertible}$$
-
-and also,
-
-$$\text{singularity} \Leftrightarrow \text{not full rank} \Leftrightarrow \text{non-invertible}$$
-
 ## Matrix As Linear Transformation
 
 In the previous section, we see $$\mathbf{A}\boldsymbol{\alpha}=\mathbf{b}$$ as a transformation imposed by $\mathbf{A}$ upon $\boldsymbol{\alpha}$ to $\mathbf{b}$. In linear algebra, a transformation is composed of two parts: **scaling** and **rotation**.
 
-For example, $$\begin{pmatrix}1.41 & 2.19 \\ -2.19 & 1.41\end{pmatrix}\begin{pmatrix}-1 \\ 2\end{pmatrix} = \begin{pmatrix}3 \\ 5\end{pmatrix} \tag{8}$$
+For example, $$\begin{pmatrix}1.41 & 2.19 \\ -2.19 & 1.41\end{pmatrix}\begin{pmatrix}-1 \\ 2\end{pmatrix} = \begin{pmatrix}3 \\ 5\end{pmatrix} \tag{6}$$
 
 If we first rotate $\boldsymbol{\alpha}$ clockwise $57.5^\circ$ then scale it $2.61$ times its length, we will get exactly $\mathbf{b}$ as illustrated below.
 
@@ -290,7 +236,7 @@ And it can be easily checked that $$\mathbf{A}=\mathbf{S}\mathbf{R}$$.
 
 If we transform $\mathbf{b}$ by a matrix $$\mathbf{B} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$$, we end up with the same resulted vector $\mathbf{b}$, however, even $$\mathbf{B}\boldsymbol{\alpha}=\mathbf{S}\mathbf{R}\boldsymbol{\alpha}$$, it does not necessarily mean that $\mathbf{B} = \mathbf{S}\mathbf{R}$. It only tells us either by transformation $\mathbf{B}$ or by a combined transformations $\mathbf{R}$ and $\mathbf{S}$ we end up with the same resulted vector, but the possible paths from one vector to another can be different. 
 
-Also, by $(3)$ we know that multiplication with a matrix is not only a transformation upon **single vector** but the **space as a whole**. Below is the illustration of the space transformation imposed by matrix $\mathbf{A}=\mathbf{S}\mathbf{R}$, where the <span style=color:blue>blue</span> arrow and <span style=color:red>red</span> arrow represent <span style=color:blue>$x$</span>- and <span style=color:red>$y$</span>- axis in the original space.
+Also, by $(3)$ we know that multiplication with a matrix is not only a transformation upon **single vector** but the **space as a whole**. Below is the illustration of the space transformation imposed by matrix $\mathbf{A}=\mathbf{S}\mathbf{R}$, where the <span style="color:blue">blue</span> arrow and <span style="color:red">red</span> arrow represent <span style="color:blue">$x$</span>- and <span style="color:red">$y$</span>- axis in the original space.
 
 <div align="center">
     <img class="image image--xl" src="/img/922-MD/plot6.gif">
@@ -310,3 +256,65 @@ Different from rotation and scaling, $\mathbf{B}$ **flipps** the whole space, tr
 Either multiplied by $\mathbf{B}$ or $\mathbf{S}\mathbf{R}$, $\boldsymbol{\alpha}$ **happens to be transformed** to the same result, however, for another vectors in the space, the result is quite different.
 
 This example provides intuition about decomposing matrix into multiplication of consecutive matrices each responsible for a specific operation on the vector. We've already talked about basis in which we can represent a vector, in fact matrix decomposition makes extensive use of the basis, which will be explained later.
+
+## Singular Matrix
+
+In the above sections, we use the inverse of a matrix without clarifying that it does exist. It's true that not all square matrix (matrix with number of rows equal to number of columns) is invertible. 
+
+For example, suppose we have a basis of two vectors $\mathbf{d}_1=\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ and $\mathbf{d}_2=\begin{pmatrix} 2 \\ 4 \end{pmatrix}$, how can we express $\boldsymbol{\alpha}=\begin{pmatrix} 3 \\ 4 \end{pmatrix}$ in this basis?
+
+$$\begin{pmatrix}
+3\\4
+\end{pmatrix} = c_1 \mathbf{d}_1 + c_2 \mathbf{d}_2 = c_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + c_2\begin{pmatrix} 2 \\ 4 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 &4 \end{pmatrix}\begin{pmatrix} c_1 \\ c_2 \end{pmatrix} \tag{7}$$
+
+we can express $(7)$ in system of equations,
+
+$$\begin{cases}
+3 = c_1 + 2c_2 \\
+4 = 2c_1 + 4 c_2
+\end{cases}$$
+
+if we add $-2$ times first row to the second row, it will yield,
+
+$$\begin{cases}
+3 = c_1 + 2c_2 \\
+-2 = 0 + 0
+\end{cases}$$
+
+which has no solution because the second expression never holds true. Since we can not find such $c_1$ and $c_2$ that satisfy $(7)$ it means that $\boldsymbol{\alpha}$ can not be expresssed in the basis of $\mathbf{d}_1$ and $\mathbf{d}_2$. Equivalently, $$\begin{pmatrix}\mathbf{d}_1 & \mathbf{d}_2\end{pmatrix} = \begin{pmatrix}1 & 2 \\ 2 & 4\end{pmatrix}$$ has no inverse.
+
+Let's go back to $(7)$ to find out why $\mathbf{d}_1$ and $\mathbf{d}_2$ cannot be a basis for $\boldsymbol{\alpha}$. Notice that $\mathbf{d}_2 = 2\mathbf{d}_1$, therefore, $(7)$ can be written as,
+
+$$\begin{pmatrix}
+3\\4
+\end{pmatrix} = c_1 \mathbf{d}_1 + c_2 \mathbf{d}_2 = c_1 \mathbf{d}_1 + 2c_2\mathbf{d}_1 = c \mathbf{d}_1 = c\begin{pmatrix} 1 \\ 2\end{pmatrix} \tag{8}$$
+
+where $c=c_1+ 2c_2$. No matter what $c$ we choose, $(6)$ can never hold equal.
+
+In the illustration below, $\mathbf{b}_1,\mathbf{b}_2$ lie exactly along the same line which keeps an angle away from $\boldsymbol{\alpha}$. Every combination of $\mathbf{b}_1$ and $\mathbf{b_2}$ will only lie along the same line which is apparently not $\boldsymbol{\alpha}$. In this case, $\boldsymbol{\alpha}$ cannot be expressed as linear combination of $\mathbf{b}_1$ and $\mathbf{b_2}$ hence $c_1$ and $c_2$ does not exist.
+
+<div align="center">
+    <img class="image image--xl" src="/img/922-MD/plot3.svg">
+</div>
+
+$\mathbf{b}_1$ and $\mathbf{b_2}$ are vectors on the plane, but the combination of them are just a line on the plane. Notice how it is different to $\mathbf{b}_1$ and $\mathbf{b}_2$ whose linear combination can be any vectors on the plane as introduced before.
+
+The matrix $$\begin{pmatrix}\mathbf{d}_1 & \mathbf{d}_2\end{pmatrix} = \begin{pmatrix}1 & 2 \\ 2 & 4\end{pmatrix}$$ multiplied by any vector only result vectors along a same line, lossing its ability to transform vectors in the plane back and forth, therefore, it is no longer invertible. In this case, this matrix is called a **singular matrix**.
+
+The crux behind the singularity is that $\mathbf{b}_2$ itself is linear in $\mathbf{b}_1$. Denote $$\mathbf{D}=\begin{pmatrix}\mathbf{d}_1 & \mathbf{d}_2\end{pmatrix} = \begin{pmatrix}1 & 2 \\ 2 & 4\end{pmatrix}$$, if we multiplied $-2$ times first row of the matrix added to the second row, it yields $$\begin{pmatrix}1 & 2 \\ 0 & 0\end{pmatrix} $$. Notice this matrix has only one row that is not all zero which means that this matrix is of rank $1$, denoted as $\text{rank}(\mathbf{D})=1$ which is less than its dimension of $2$. Therefore, we say that this matrix is NOT of **full rank** hence it's singular.
+
+To sum up, we have the following equivalence
+
+$$\text{nonsingularity} \Leftrightarrow \text{full rank} \Leftrightarrow \text{invertible}$$
+
+and also,
+
+$$\text{singularity} \Leftrightarrow \text{not full rank} \Leftrightarrow \text{non-invertible}$$
+
+By the linear transformation view, we can illustrate how the singular matrix $\mathbf{D}$ transform the space,  
+
+<div align="center">
+    <img class="image image--xl" src="/img/922-MD/plot8.gif">
+</div>
+
+Notice that any vectors in the plane being transformed by $\mathbf{D}$ are squashed into a single line. Since we can not recover the original space from just a single line, the singular matrix lowers the dimension of the space, hence they are non-invertible.
