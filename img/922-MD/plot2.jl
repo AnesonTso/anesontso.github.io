@@ -1,12 +1,13 @@
 using Plots
-using LaTeXStrings
 
 let n_f = 150
     @gif for f in 1:1:n_f
         p = plot(legend=false, ratio=1, framestyle=:none)
         default(color=:black, xlim=(-10.3, 10.3), ylim=(-10.3, 10.3))
-        # A = [1 2/n_f * f; 3/n_f * f 1+3/n_f * f]
-        A = [1+0.41/n_f * f 2.19/n_f * f; -2.19/n_f * f 1+0.41/n_f * f]
+        # A = [1 2/n_f * f; 3/n_f * f 1+3/n_f * f]                          # B
+        # A = [1+0.41/n_f * f 2.19/n_f * f; -2.19/n_f * f 1+0.41/n_f * f]   # SR
+        A = [1 2/n_f * f; 2/n_f * f 1 + 3/n_f * f]
+
         for i in -10:1:10
             a1 = A * [-10; i]
             a2 = A * [10; i]

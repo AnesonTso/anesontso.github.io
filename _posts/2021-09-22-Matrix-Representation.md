@@ -242,7 +242,7 @@ Also, by $(3)$ we know that multiplication with a matrix is not only a transform
     <img class="image image--xl" src="/img/922-MD/plot6.gif">
 </div>
 
-Notice that the space grid is, as we expected, rotated and scaled simultaneously. By this process, the vector $\boldsymbol{\alpha}$ is transformed into $\mathbf{b}$ (as indicated by the <span style=color:green>green</span> line).
+Notice that the space grid is, as we expected, rotated and scaled simultaneously. By this process, the vector $\boldsymbol{\alpha}$ is transformed into $\mathbf{b}$ (as indicated by the <span style="color:green">green</span> line).
 
 How about the transformation imposed on the space by matrix $\mathbf{B}$? Below is the illustration.
 
