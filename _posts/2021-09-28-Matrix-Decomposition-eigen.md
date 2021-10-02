@@ -98,6 +98,8 @@ where $\mathbf{P}=\begin{pmatrix}\mathbf{p}_1 & \mathbf{p}_2 &\cdots& \mathbf{p}
     <img class="image image--xl" src="/img/1001-MD-E/plot2.gif">
 </div>
 
+
+
 ## Diagonalization
 
 ## Similar Matrix
