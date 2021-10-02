@@ -171,7 +171,7 @@ If $\mathbf{c}_1 \cdot \mathbf{c}_2=0$, $\cos \theta=0$, which means that $\thet
 
 Suppose rather than using $\mathbf{u}$ and $\mathbf{v}$ as basis for this plane, we use two un-orthogonal vectors $$\mathbf{b}_1 =\begin{pmatrix} 1\\2\end{pmatrix}$$ and $$\mathbf{b}_2=\begin{pmatrix} 2\\1\end{pmatrix}$$ to express vectors in the plane. For the same vector $$\mathbf{a} = \begin{pmatrix} 4\\3\end{pmatrix}$$, 
 
-$$\begin{pmatrix} 4\\3\end{pmatrix} = c_1 \begin{pmatrix} 1\\2\end{pmatrix} + c_2 \begin{pmatrix} 2\\1 \end{pmatrix} = \begin{pmatrix} 1 & 2\\ 2 & 1\end{pmatrix}\begin{pmatrix} c_1\\c_2\end{pmatrix}$$
+$$\begin{pmatrix} 4\\3\end{pmatrix} = c_1 \begin{pmatrix} 1\\2\end{pmatrix} + c_2 \begin{pmatrix} 2\\1 \end{pmatrix} = \begin{pmatrix} 1 & 2\\ 2 & 1\end{pmatrix}\begin{pmatrix} c_1\\c_2\end{pmatrix} = \mathbf{A}\begin{pmatrix} c_1 \\c_2 \end{pmatrix}$$
 
 If we can solve $$\begin{pmatrix} c_1\\c_2\end{pmatrix}$$ in the above equation, we'll know how to express $\mathbf{a}$ in $\mathbf{b}_1$ and $\mathbf{b}_2$. Before doing it, we need to introduct matrix inverse.
 

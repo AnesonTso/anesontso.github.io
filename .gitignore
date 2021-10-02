@@ -25,4 +25,4 @@ Gemfile.lock
 _site/
 .jekyll-metadata
 .jekyll-cache/
-img/922-MD/plot.jl
+**/*.jl
