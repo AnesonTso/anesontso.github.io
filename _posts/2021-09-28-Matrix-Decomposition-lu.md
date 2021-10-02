@@ -1,5 +1,5 @@
 ---
-title: Matrix Decomposition: LU Decomposition
+title: "Matrix Decomposition: LU Decomposition"
 mathjax: true
 date: 2021-09-28
 tags:

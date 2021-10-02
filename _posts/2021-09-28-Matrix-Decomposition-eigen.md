@@ -1,5 +1,5 @@
 ---
-title: Matrix Decomposition: Eigendecomposition
+title: "Matrix Decomposition: Eigendecomposition"
 mathjax: true
 date: 2021-10-01
 tags:
@@ -43,7 +43,7 @@ $$\begin{pmatrix} c_1 \\ c_2\end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 & 1\end{p
 
 Now the meaning of inverse matrix becomes clear that once it is multiplied by a vector, it results the coefficients of the linear combination where this vector is expressed on the bases of the column vectors of this matrix.
 
-Also, from the linear transformation view, $\mathbf{A}$ transforms $\begin{pmatrix} c_1 \\ c_2\end{pmatrix}$ into $\begin{pmatrix} x \\ y\end{pmatrix}$ in $(1)$ and $\mathbf{A}^{-1}$ transforms $\begin{pmatrix} x \\ y\end{pmatrix}$ back into $\begin{pmatrix} c_1 \\ c_2\end{pmatrix}$ in $(2)$ like counteraction of $\mathbf{A}$.
+Also, from the linear transformation view, $\mathbf{A}$ transforms $$\begin{pmatrix} c_1 \\ c_2\end{pmatrix}$$ into $$\begin{pmatrix} x \\ y\end{pmatrix}$$ in $(1)$ and $\mathbf{A}^{-1}$ transforms $$\begin{pmatrix} x \\ y\end{pmatrix}$$ back into $$\begin{pmatrix} c_1 \\ c_2\end{pmatrix}$$ in $(2)$ like counteraction of $\mathbf{A}$.
 
 ## Eigenvalue & Eigenvector
 
@@ -64,7 +64,7 @@ $$\vert \mathbf{A} - \lambda \mathbf{I} \vert = 0 \tag{5}$$
 Solving $(5)$ yields the eigenvalues and eigenvectors of $\mathbf{A}$.
 
 
-For example, $\mathbf{A} = \begin{pmatrix} 2 & 1\\ 3 & 4\end{pmatrix}$ has eigen vectors $\mathbf{p}_1=\begin{pmatrix} -1 \\ 1\end{pmatrix}$ and $\mathbf{p}_2=\begin{pmatrix} 1 \\ 3\end{pmatrix}$, by linear transformation $\mathbf{A}$, both $\mathbf{p}_1$ and $\mathbf{p}_2$ only go through scaling,
+For example, $$\mathbf{A} = \begin{pmatrix} 2 & 1\\ 3 & 4\end{pmatrix}$$ has eigen vectors $$\mathbf{p}_1=\begin{pmatrix} -1 \\ 1\end{pmatrix}$$ and $$\mathbf{p}_2=\begin{pmatrix} 1 \\ 3\end{pmatrix}$$, by linear transformation $\mathbf{A}$, both $\mathbf{p}_1$ and $\mathbf{p}_2$ only go through scaling,
 
 $$\mathbf{A}\mathbf{p}_1 = \begin{pmatrix} -1\\1\end{pmatrix} = \mathbf{p}_1$$
 
@@ -92,7 +92,7 @@ For a non-singular matrix $\mathbf{A}$ with linearly independent eigenvectors $\
 
 $$\mathbf{A}=\mathbf{P}\Lambda\mathbf{P}^{-1}$$
 
-where $\mathbf{P}=\begin{pmatrix}\mathbf{p}_1 & \mathbf{p}_2 &\cdots& \mathbf{p}_n\end{pmatrix}$ and $\Lambda=\begin{pmatrix}\lambda_1 & & & \\ & \lambda_2 & & \\ & & \ddots & \\ & & & \lambda_n\\\end{pmatrix}$.
+where $\mathbf{P}=\begin{pmatrix}\mathbf{p}_1 & \mathbf{p}_2 &\cdots& \mathbf{p}_n\end{pmatrix}$ and $$\Lambda=\begin{pmatrix}\lambda_1 & & & \\ & \lambda_2 & & \\ & & \ddots & \\ & & & \lambda_n\\\end{pmatrix}$$.
 
 <div align="center">
     <img class="image image--xl" src="/img/1001-MD-E/plot2.gif">
