@@ -40,7 +40,7 @@ The result is the same for $(1)$ and $(2)$ but with different intermediate opera
 For $(1)$ it is very familiar that the element of result from multiplication of a matrix and a column vector at a row is the inner product of the same row of that matrix with that column vector, with the following illustration.
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/matrixmulti.png">
+    <img class="image image--xl" src="/img/0922-MD/matrixmulti.png">
 </div>
 
 For $(2)$ we can see clearly that the result is actually a **linear combination** of each column vector from that matrix with **coefficients**, or scalar in front, being the components in the column vector.
@@ -111,7 +111,7 @@ On the other hand, this multiplication indicates that the matrix $\mathbf{A}$ **
 Since matrix multiplication is actually linear combination of its corresponding column vectors, this transformation means that we can use the column vectors, that is, <span style="color:blue">$\boldsymbol{\alpha}_1$</span> and <span style="color:orange">$\boldsymbol{\alpha}_2$</span> of $\mathbf{A}$ to represent <span style="color:green">$\mathbf{b}$</span>.
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot4.svg" >
+    <img class="image image--xl" src="/img/0922-MD/plot4.svg" >
 </div>
 
 That is to say, for any vector in this 2-dimensional space, $\begin{pmatrix} x \\ y\end{pmatrix}$ will be transformed by $\mathbf{A}$ into,
@@ -145,7 +145,7 @@ Denote $$\mathbf{u} = \begin{pmatrix}
 Therefore, in this coordinates system, <span style="color:green">$$\begin{pmatrix}4\\3\end{pmatrix}$$</span> can be expressed as the vector resulted by adding $4$ times <span style="color:blue">$\mathbf{u}$</span> and $3$ times <span style="color:orange">$\mathbf{v}$</span>, as illustrated in the following graph.
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot1.svg">
+    <img class="image image--xl" src="/img/0922-MD/plot1.svg">
 </div>
 
 we are familiar to express vector as linear combination of orthogonal vectors, i.e., a set of vectors that are perpendicular to each other as $\mathbf{u}$ and $\mathbf{v}$ above. It is more convenient for us to conceptually locate object using orthogonal vectors. 
@@ -198,7 +198,7 @@ $$\begin{pmatrix}c_1 \\ c_2\end{pmatrix} = \begin{pmatrix} 0.67\\1.67\end{pmatri
 we can also demonstrate this by drawing <span style="color:green">$\mathbf{a}$</span> as follows.
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot2.svg">
+    <img class="image image--xl" src="/img/0922-MD/plot2.svg">
 </div>
 
 Inverse of matrix acts like a function that once multiplied by a vector yields the **coefficients** of represention of that vector in the basis which are column vectors of that matrix. 
@@ -215,7 +215,7 @@ For example, $$\begin{pmatrix}1.41 & 2.19 \\ -2.19 & 1.41\end{pmatrix}\begin{pma
 If we first rotate $\boldsymbol{\alpha}$ clockwise $57.5^\circ$ then scale it $2.61$ times its length, we will get exactly $\mathbf{b}$ as illustrated below.
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot5.svg">
+    <img class="image image--xl" src="/img/0922-MD/plot5.svg">
 </div>
 
 A rotation matrix has the form $$\mathbf{R}=\begin{pmatrix}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta  \end{pmatrix}$$ where $\theta$ is the angular between two vectors (check for section [Orthogonality](#orthogonality)). 
@@ -239,7 +239,7 @@ If we transform $\mathbf{b}$ by a matrix $$\mathbf{B} = \begin{pmatrix} 1 & 2 \\
 Also, by $(3)$ we know that multiplication with a matrix is not only a transformation upon **single vector** but the **space as a whole**. Below is the illustration of the space transformation imposed by matrix $\mathbf{A}=\mathbf{S}\mathbf{R}$, where the <span style="color:blue">blue</span> arrow and <span style="color:red">red</span> arrow represent <span style="color:blue">$x$</span>- and <span style="color:red">$y$</span>- axis in the original space.
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot6.gif">
+    <img class="image image--xl" src="/img/0922-MD/plot6.gif">
 </div>
 
 Notice that the space grid is, as we expected, rotated and scaled simultaneously. By this process, the vector $\boldsymbol{\alpha}$ is transformed into $\mathbf{b}$ (as indicated by the <span style="color:green">green</span> line).
@@ -247,7 +247,7 @@ Notice that the space grid is, as we expected, rotated and scaled simultaneously
 How about the transformation imposed on the space by matrix $\mathbf{B}$? Below is the illustration.
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot7.gif">
+    <img class="image image--xl" src="/img/0922-MD/plot7.gif">
 </div>
 
 
@@ -294,7 +294,7 @@ where $c=c_1+ 2c_2$. No matter what $c$ we choose, $(6)$ can never hold equal.
 In the illustration below, $\mathbf{b}_1,\mathbf{b}_2$ lie exactly along the same line which keeps an angle away from $\boldsymbol{\alpha}$. Every combination of $\mathbf{b}_1$ and $\mathbf{b_2}$ will only lie along the same line which is apparently not $\boldsymbol{\alpha}$. In this case, $\boldsymbol{\alpha}$ cannot be expressed as linear combination of $\mathbf{b}_1$ and $\mathbf{b_2}$ hence $c_1$ and $c_2$ does not exist.
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot3.svg">
+    <img class="image image--xl" src="/img/0922-MD/plot3.svg">
 </div>
 
 $\mathbf{b}_1$ and $\mathbf{b_2}$ are vectors on the plane, but the combination of them are just a line on the plane. Notice how it is different to $\mathbf{b}_1$ and $\mathbf{b}_2$ whose linear combination can be any vectors on the plane as introduced before.
@@ -314,7 +314,7 @@ $$\text{singularity} \Leftrightarrow \text{not full rank} \Leftrightarrow \text{
 By the linear transformation view, we can illustrate how the singular matrix $\mathbf{D}$ transform the space,  
 
 <div align="center">
-    <img class="image image--xl" src="/img/922-MD/plot8.gif">
+    <img class="image image--xl" src="/img/0922-MD/plot8.gif">
 </div>
 
 Notice that any vectors in the plane being transformed by $\mathbf{D}$ are squashed into a single line. Since we can not recover the original space from just a single line, the singular matrix lowers the dimension of the space, hence they are non-invertible.
