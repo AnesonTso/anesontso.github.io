@@ -27,3 +27,9 @@ type: article
 <script>
   {%- include scripts/article.js -%}
 </script>
+
+{%- for js in page.jsarr -%}
+  <script type="module">
+    {%- include {{ js }} -%}
+  </script>
+{%- endfor -%}

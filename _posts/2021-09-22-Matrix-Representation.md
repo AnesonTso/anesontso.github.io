@@ -318,3 +318,60 @@ By the linear transformation view, we can illustrate how the singular matrix $\m
 </div>
 
 Notice that any vectors in the plane being transformed by $\mathbf{D}$ are squashed into a single line. Since we can not recover the original space from just a single line, the singular matrix lowers the dimension of the space, hence they are non-invertible.
+
+## determinant
+
+Because a matrix multiplied by an identity matrix always yields itself, for example,
+
+$$\mathbf{A}\mathbf{I} = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}=\begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix} \tag{9}$$
+
+It is straightforward and seems no much things to talk about, but if we see $(9)$ in the linear transformation view, it is clear to see that the linear transformation $\mathbf{B}$, transforms $$\mathbf{u} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$$ and $$\mathbf{v} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$$, which are a set of orthonormal bases of the 2-dimensional Cartesian coordinate system into column vectors of $\mathbf{A}$, that is, $\mathbf{a}_1$ and $\mathbf{a}_2$.
+
+<div align="center">
+    <img class="image image--xl" src="/img/0922-MD/plot9.svg">
+</div>
+
+**Notice** that different to previous illustrations of matrix linear transformation on the whole space where the grids of coordinate system are also transformed, here we keep original grids untouched because it woule be easier to read the position of vectors from the graph.
+
+The <span style="color:green">green</span> and <span style="color:orange">orange</span> unit vector each long the <span style="color:blue">$x$</span>- and <span style="color:red">$y$</span>- axis is respectively <span style="color:green">$\mathbf{u}$</span> and <span style="color:orange">$\mathbf{v}$</span>, which cover a square in the plane as indicated by the orange shade whose area, which is easily recognised is one.
+
+$\mathbf{u}$ and $\mathbf{v}$ are transformed by $\mathbf{A}$ to <span style="color:green">$\mathbf{a}_1$</span> and <span style="color:orange">$\mathbf{a}_2$</span> with corresponding colors in the graph. Now, $\mathbf{a}_1$ and $\mathbf{a}_2$, as two adjacent sides form a parallelogram shown by adding their opposite sides. 
+
+Now, what is the area of this parallelogram which has column vectors of $\mathbf{A}$ as its adjacent sides? The dotted orange line in the graph is an auxiliary line which is perpendicular to $\mathbf{a}_1$. The area of a parallelogram can be calculated as its height times the length of a base. Since we use $\mathbf{a}_1$ as a base, the lenght of this auxiliary line is the length of height, which can be calculated as $\vert \mathbf{a}_1  \vert \sin\theta$, where $\theta$ is the angle between $\mathbf{a}_1$ and $\mathbf{a}_2$ and $\vert \cdot \vert $ is the length of a vector, therefore, the area $S$,
+
+$$\begin{aligned}
+S &= \vert \mathbf{a}_1 \vert \vert \mathbf{a}_2 \vert \sin \theta \\
+&= \vert \mathbf{a}_1 \vert \vert \mathbf{a}_2 \vert \sqrt{1-\cos^2\theta} \\
+&=  \sqrt{(\vert \mathbf{a}_1 \vert \vert \mathbf{a}_2 \vert)^2 \left(1-\left(\frac{\mathbf{a}_1 \cdot \mathbf{a}_2}{ \vert \mathbf{a}_1\vert \vert \mathbf{a}_2\vert } \right)^2\right)}\\
+&= \sqrt{(\vert \mathbf{a}_1 \vert \vert \mathbf{a}_2 \vert)^2 - (\mathbf{a}_1 \cdot \mathbf{a}_2)^2}
+\end{aligned}$$
+
+Since we consider $$\mathbf{a}_i, i=1,2$$ in 2-dimensional space, we use $$a_{ij}, i,j=1,2$$ to represent $j$-th element in vector $\mathbf{a}_i$, therefore, 
+
+$$\begin{aligned}
+S &= \sqrt{(a_{11}^2 + a_{12}^2)(a_{21}^2 + a_{22}^2) - (a_{11}a_{21} + a_{21} a_{22})^2} \\
+&= \sqrt{(a_{11}a_{22} - a_{12} a_{21})^2} \\
+&= \vert a_{11}a_{22} - a_{12}a_{21}\vert 
+\end{aligned}$$
+
+Therefore, the area of $\mathbf{A}$,
+
+$$S_{\mathbf{A}} = \vert a_{11} a_{22} - a_{12}a_{21}\vert =3\times 2- 1\times 1 = 5$$
+
+From linear algebra course, we know that the **determinant** of matrix $\mathbf{A}$ is,
+
+$$\vert \mathbf{A} \vert  = \begin{vmatrix} 3 & 1 \\ 1 & 2 \end{vmatrix} = 3\times 2 - 1\times 1 = 5$$
+
+which means that the determinant of $\mathbf{A}$ is equal to the area of the parallelogram whose adjacent sides are column vectors of $\mathbf{A}$. Below we consider three situations each of which we do some change upon $\mathbf{A}$ and see how the area covered by it and the determinant of it change correspond to each other.
+
+If we flip the positions of <span style="color:green">$\mathbf{a}_1$</span> and <span style="color:orange">$\mathbf{a}_2$</span> in $\mathbf{A}$, that is, $\mathbf{A}\prime=\begin{pmatrix} \mathbf{a}_2 & \mathbf{a}_1 \end{pmatrix}$, 
+
+<div align="center">
+    <img class="image image--xl" src="/img/0922-MD/plot10.svg">
+</div>
+
+the area covered by the parallelogram keeps unchanged, but the determinant of $\mathbf{A}\prime$ now becomes,
+
+$$\vert \mathbf{A}\prime \vert = \begin{vmatrix} 1 & 3 \\ 2 & 1 \end{vmatrix} = 1\times 1 - 3 \times 2 = -5$$
+
+which is also equal to the area of the parallelogram in magnitude but reverse in sign.

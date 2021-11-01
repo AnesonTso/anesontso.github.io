@@ -2,6 +2,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+{%- if page.jsarr -%}
+    <script src="https://threejs-1259157358.cos.ap-nanjing.myqcloud.com/three.js/build/three.module.js" type="module"></script>
+{%- endif -%}
+
 {%- include snippets/get-article-title.html article=page -%}
 <title>{%- if __return -%}{{ __return }} - {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
 

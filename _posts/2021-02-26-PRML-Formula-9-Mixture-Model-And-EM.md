@@ -4,7 +4,7 @@ mathjax: true
 date: 2021-02-26
 tags:
 - Probability
-- PRML
+- "Machine Learning"
 comment: true
 excerpt_separator: <!--more-->
 
