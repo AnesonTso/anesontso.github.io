@@ -319,7 +319,7 @@ By the linear transformation view, we can illustrate how the singular matrix $\m
 
 Notice that any vectors in the plane being transformed by $\mathbf{D}$ are squashed into a single line. Since we can not recover the original space from just a single line, the singular matrix lowers the dimension of the space, hence they are non-invertible.
 
-## determinant
+## Determinant
 
 Because a matrix multiplied by an identity matrix always yields itself, for example,
 

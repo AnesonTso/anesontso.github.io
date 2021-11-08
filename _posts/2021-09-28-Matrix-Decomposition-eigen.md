@@ -27,7 +27,7 @@ In this blog, we'll talk about matrix eigendecomposition, or diagonalization, wh
 
 In [matrix representation](https://staratlas.xyz/2021/09/22/Matrix-Representation.html) we discuss how we can see matrix in the view of linear transformation of the space on one hand and the inverse matrix as the inverse transformation on the other hand. There is a quick review.
 
-We have two column vectors $\mathbf{a}_1=\begin{pmatrix} 1 \\ 2\end{pmatrix}$ and $\mathbf{a}_2=\begin{pmatrix} 2 \\ 1\end{pmatrix}$, which combined column by column forms the matrix $\mathbf{A}$.
+We have two column vectors $$\mathbf{a}_1=\begin{pmatrix} 1 \\ 2\end{pmatrix}$$ and $$\mathbf{a}_2=\begin{pmatrix} 2 \\ 1\end{pmatrix}$$, which combined column by column forms the matrix $\mathbf{A}$.
 
 $$\mathbf{A} =  \begin{pmatrix} \mathbf{a}_1 & \mathbf{a}_2\end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 & 1\end{pmatrix}$$
 
@@ -71,8 +71,9 @@ $$\mathbf{A}\mathbf{p}_2 = \begin{pmatrix} 5\\15\end{pmatrix}=5\mathbf{p}_2$$
 by linear transformation, $\mathbf{p}_1$ keeps unchanged and $\mathbf{p}_2$ is stretched five times its original length, both of them only being scaled, illustrated as below. Therefore the eigenvalues associated with $\mathbf{p}_1$ and $\mathbf{p}_2$ are $1$ and $5$.
 
 <div align="center">
-    <img class="image image--xl" src="/img/1001-MD-E/plot1.gif">
+    <img src="/img/1001-MD-E/plot1.gif" width=600 height=400>
 </div>
+
 
 The whole space, including the <span style="color:yellow">yellow vector</span> is rotated and stretched, while these two eigen vectors (illustrated in <span style="color:green">green</span> and <span style="color:orange">orange</span> respectively) stay along their original lines through this transformation.
 
@@ -111,7 +112,7 @@ $$\mathbf{P}\begin{pmatrix} 2 \\ 1\end{pmatrix} = 2\mathbf{p}_1 + \mathbf{p}_2= 
 which verifies that by $\mathbf{P}^{-1}\mathbf{x}$ we express $\mathbf{x}$ as linear combination of eigenvectors of $\mathbf{A}$, that is, $\mathbf{x}$ is $2$ times $\mathbf{p}_1$ plus $1$ times $\mathbf{p}_2$, illustrated below.
 
 <div align="center">
-    <img class="image image--xl" src="/img/1001-MD-E/plot4.svg">
+    <img src="/img/1001-MD-E/plot4.svg" width=600 height=400>
 </div>
 
 It is clear that after transformation $\mathbf{P}^{-1}$, we end up with a new coordinate systems where <span style="color:orange">$\mathbf{p}_1$</span> and <span style="color:green">$\mathbf{p}_2$</span> are unit vectors along the $x$- and $y$- axis in the new transformed space. Also, they seem to be *orthogonal*. Is it true for any non-singular matrix $\mathbf{A}$ or purely accidental? Let's check it out by seeing how each $\mathbf{p}_i$ is transformed by $\mathbf{P}^{-1}$. For a $n\times n$ non-singular matrix $\mathbf{A}$ with eigen-matrix $\mathbf{P}=\begin{pmatrix} p_1 & p_2 & \cdots & p_n \end{pmatrix}$.
@@ -129,7 +130,7 @@ $$\boldsymbol{\Lambda}\mathbf{x} = \begin{pmatrix} \lambda_1 & \\ & \lambda_2 \e
 In means that by multiplying a diagonal matrix, the space is stretched such that each direction is scaled independent of others. Because $\mathbf{A}$ has eigenvalues $1$ and $5$, the $x$-direction keeps unchanged but $x$-direction is scaled $5$ times its original length.
 
 <div align="center">
-    <img class="image image--xl" src="/img/1001-MD-E/plot5.svg">
+    <img src="/img/1001-MD-E/plot5.svg" width=600 height=400>
 </div>
 
 Notice that here the $x$-direction and $y$-direction are the directions of *eigenvectors* because by the $\boldsymbol{\Lambda}^{-1}$ transforamtion, we are in the space where vectors are located by eigenvectors. The benefit of it is that a matrix does't rotate or flip vectors along the directions of its eigenvectors, therefore, in this space, eigenvectors **play the role of orthonormal basis** just like the $\mathbf{u}=\begin{pmatrix} 1 \\ 0\end{pmatrix}$ and $\mathbf{v}=\begin{pmatrix} 0 \\ 1\end{pmatrix}$ in our very familiar 2-dimensional Cartesian coordinate system.
@@ -144,7 +145,7 @@ In the "eigen-space" a vector is scaled in each direction according to the eigen
 The whole process of transformation imposed by $\mathbf{A}$ is animated below which consists of three steps according to the three components of matrix eigendecomposition.
 
 <div align="center">
-    <img class="image image--xl" src="/img/1001-MD-E/plot2.gif">
+    <img src="/img/1001-MD-E/plot2.gif" width=600 height=400>
 </div>
 
 ## Matrix Diagonalization

@@ -7,7 +7,9 @@ excerpt_separator: <!--more-->
 
 ---
 
-This post is mainly based on Bishop's *Pattern Recognition and Machine Learning*.
+This post is mainly based on Bishop's *Pattern Recognition and Machine Learning*. 
+
+Unlike MCMC which uses stochastic Markov process to approximate the distribution of interest, the variational inference is a nonstochastic method of approximation by optimization. It considers approximation by minimizing the "difference" between distribution of interest and some combination of parametric distributions whose discrete form can be well determined by some parameters.
 
 <!--more-->
 
