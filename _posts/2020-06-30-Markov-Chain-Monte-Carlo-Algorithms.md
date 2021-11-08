@@ -28,7 +28,7 @@ In previous introduction, we've learned that an irreducible and possitive recurr
 
 MCMC is utilized given a stationary distribution from which we need to take samples, and the question becomes to construct a kernel function to approximate it.
 
-Differed from the way such construction is implemented, MCMC methods have different algorithms.
+By different way such construction is implemented, MCMC methods have different algorithms.
 
 
 ## Gibbs Sampling

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Gaussian Process"
 mathjax: true
-date: 2021-11-04
+date: 2021-09-10
 tags:
 - "Probabilistic Reasoning"
 comment: true
@@ -38,7 +38,7 @@ $$\begin{pmatrix}
 \boldsymbol{\Sigma_{Y,X}} & \boldsymbol{\Sigma_{Y}}
 \end{pmatrix} \right)$$
 
-where $\mu(\cdot)$ and $\boldsymbol{\Sigma}_{\cdot}$ are mean and variance of each variable respectively and $\boldsymbol{\Sigma_{X,Y}}$ is the covariance between $\mathbf{X}$ and $\mathbf{Y}$.
+where $\mu(\cdot)$ and $$\boldsymbol{\Sigma}_{\cdot}$$ are mean and variance of each variable respectively and $$\boldsymbol{\Sigma_{X,Y}}$$ is the covariance between $\mathbf{X}$ and $\mathbf{Y}$.
 
 The truly useful property of Gaussian distribution is that we can infer the distribution of a marginal variable given some knowledge about the others. Since there exist the covariance $\boldsymbol{\Sigma_{X, Y}}$, it means that $\mathbf{X}$ and $\mathbf{Y}$ must have been probabilistically related, that is, correlated, then some a priori information about $\mathbf{X}$ will narrow down the possibility about $\mathbf{Y}$ in the form of conditional distribution $p(\mathbf{Y} \vert \mathbf{X})$. To prove the conditional Gaussian distribution, we need to use another property of Gaussian distribution that two random variables each follows Gaussian distribution are **independent** if they are not correlated, that is, $\boldsymbol{\Sigma_{X, Y}}=\mathbf{0}$, where the $\mathbf{0}$ stands for zero matrix.
 
